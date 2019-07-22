@@ -1,0 +1,21 @@
+{
+  "id": "23er32r",
+  "name": "Placehold It Images",
+  "version": "0.0.1",
+  "description": "Placehold It",
+  "summary": "Bring Placeholder Images To Your Designs",
+  "languages": ["en"],
+  "author": "Kenny Krosky",
+  "helpUrl": "https://twitter.com/ispykenny",
+  "host": {
+    "app": "XD",
+    "minVersion": "13.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": "Placehold-It Images",
+      "commandId": "doImage"
+    }
+  ]
+}
