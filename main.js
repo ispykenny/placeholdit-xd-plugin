@@ -2,16 +2,20 @@ const commands = require('commands')
 const axios = require('./axios');
 const {ImageFill, Color} = require("scenegraph");
 
-const runImages = async (selection, documentRoot) => {
+const runImages = async (selection) => {
+  let types = ["Rectangle", "Ellipse", "Polygon"];
   for(let i = 0; i < selection.items.length; i++){
     let selected = selection.items[i];
-    if(selected.constructor.name == "Rectangle" || selected.constructor.name == "Ellipse") {
-      let height = Math.round(selected.height);
-      let width = Math.round(selected.width);
+    let { localBounds } = selection.items[i];
+
+    if(types.includes(selected.constructor.name)) {
+      let height = Math.round(localBounds.height);
+      let width = Math.round(localBounds.width);
       let getDate = await fetchImage(height, width);
       let fillImage = await new ImageFill(getDate)
       selected.fill = fillImage;
     }
+    
   }
 }
 
