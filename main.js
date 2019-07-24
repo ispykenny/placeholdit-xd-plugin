@@ -2,9 +2,9 @@ const commands = require('commands')
 const axios = require('./axios');
 const {ImageFill, Color} = require("scenegraph");
 const endPoint = "https://data-uri-imagefill.herokuapp.com/?image=https://via.placeholder.com/"
+
 const runImages = async (selection) => {
   let types = ["Rectangle", "Ellipse", "Polygon"];
-
   for(let i = 0; i < selection.items.length; i++){
     let selected = selection.items[i];
     let { localBounds } = selection.items[i];
