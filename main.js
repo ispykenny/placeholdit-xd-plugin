@@ -1,5 +1,5 @@
 const commands = require('commands')
-const axios = require('./axios');
+const axios = require('./lib/axios');
 const {ImageFill, Color} = require("scenegraph");
 const endPoint = "https://data-uri-imagefill.herokuapp.com/?image=https://via.placeholder.com/";
 const { alert, error } = require('./lib/dialogs.js');
