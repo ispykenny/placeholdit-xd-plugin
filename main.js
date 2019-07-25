@@ -1,6 +1,6 @@
-const commands = require('commands')
+const commands = require('commands');
 const axios = require('./lib/axios');
-const {ImageFill, Color} = require("scenegraph");
+const { ImageFill, Color } = require("scenegraph");
 const endPoint = "https://data-uri-imagefill.herokuapp.com/?image=https://via.placeholder.com/";
 const { alert, error } = require('./lib/dialogs.js');
 
@@ -16,23 +16,23 @@ const runImages = async (selection) => {
         let height = Math.round(localBounds.height);
         let width = Math.round(localBounds.width);
         let getDate = await fetchImage(height, width);
-        let fillImage = await new ImageFill(getDate)
+        let fillImage = await new ImageFill(getDate);
         selected.fill = fillImage;
       }
   
     }
   } else {
-    alertUserNoObj()
+    alertUserNoObj();
   }
 }
 
 const fetchImage = (height, width) => {
   return axios(`${endPoint}${width}x${height}.png/?text=${width}x${height}`)
   .then(response =>  {
-    return response.data
+    return response.data;
   })
   .catch((err) => {
-    console.log(err)
+    console.log(err);
     noConnection();
   })
 }
